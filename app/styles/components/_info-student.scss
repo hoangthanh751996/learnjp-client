@@ -1,0 +1,40 @@
+.student-info {
+  margin:auto;
+
+}
+
+
+.show-info {
+  border: 1px solid gray;
+  height: 32px;
+  font-size: 15px;
+  margin: auto;
+  padding: 3px 10px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#other-info{
+  height: 50px;
+}
+#book-info {
+  height: 90px;
+}
+.list-book{
+  margin-top: 4%;
+}
+
+.student-profile form button:nth-child(n + 3) {
+  display: none;
+}
+#button-hide {
+  display: none;
+}
+
+#hide-button-studentid {
+  display: none;
+}
+
+.validate {
+  color: red;
+  font-weight: bold;
+}

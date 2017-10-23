@@ -1,0 +1,27 @@
+
+@import 'components/nav.scss';
+@import 'components/form.scss';
+@import 'components/home.scss';
+@import 'components/info-student.scss';
+@import 'components/detail-book.scss';
+@import 'components/show-book.scss';
+@import 'components/form-lent-book.scss';
+@import 'components/form-show.scss';
+@import 'components/modal-create-student.scss';
+@import 'components/modal-edit-student.scss';
+@import 'admin/menu.scss';
+@import 'admin/manage-member.scss';
+
+@import 'vendor/normalize.scss';
+
+body {
+  width: auto;
+  height: auto;
+  margin: 15px;
+}
+#form-result{
+  margin-left: 100px;
+}
+#result {
+  width: 60%;
+}
