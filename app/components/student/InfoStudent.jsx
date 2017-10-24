@@ -12,6 +12,7 @@ let InfoStudent = React.createClass({
     return {
       numberWords: "",
       level: "easy",
+      letter_check: "romaji",
       stringGenerate: ""
     }
   },
@@ -25,11 +26,16 @@ let InfoStudent = React.createClass({
       let level = e.target.value;
       this.setState({level: level});
   },
+  changeLetterCheck: function(e) {
+      let letter_check = e.target.value;
+      this.setState({letter_check: letter_check});
+  },
   handleGenerate: function(e) {
     e.preventDefault();
     let formInfo = {
       number_word: this.state.numberWords,
-      level: this.state.level
+      level: this.state.level,
+      letter_check: this.state.letter_check
     }
     generateAPI.generateWords(formInfo)
       .then((data) => {
@@ -64,13 +70,27 @@ let InfoStudent = React.createClass({
                     <input refs="email" placeholder={LABEL_STUDENT.numberword} className="form-control student-id" type="text" value={this.state.numberWords} onChange={this.changeNumberWords}/>
                     <button id="hide-buton-studentid"></button>
                   </div>
-                  <span className="validate">{this.state.error}</span>
 
                 </div>
                 <div className="col-md-3">
                   <button className="btn btn-warning" onClick={this.handleGenerate}>{BUTTON_NAME.generate}
                     <span className="glyphicon glyphicon-send"></span>
                   </button>
+                </div>
+              </div>
+              <div className="form-group">
+                <label className="col-md-3 control-label">Bảng chữ</label>
+                <div className="col-md-6  inputGroupContainer">
+                  <div className="input-group">
+                    <span className="input-group-addon">
+                      <i className="glyphicon glyphicon-education"></i>
+                    </span>
+                    <Input type="select" name="level" value={this.state.letter_check} onChange={this.changeLetterCheck}>
+                      <option value="romaji">Romaji</option>
+                      <option value="hiragana">Hiragana</option>
+                    </Input>
+                  </div>
+
                 </div>
               </div>
               <div className="form-group">
@@ -85,7 +105,6 @@ let InfoStudent = React.createClass({
                       <option value="hard">Hard</option>
                     </Input>
                   </div>
-                  <span className="validate">{this.state.error}</span>
 
                 </div>
               </div>
